@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Sonar/static/css/main.98625360.css",
+    "main.js": "/Sonar/static/js/main.9a91adfd.js",
+    "index.html": "/Sonar/index.html",
+    "main.98625360.css.map": "/Sonar/static/css/main.98625360.css.map",
+    "main.9a91adfd.js.map": "/Sonar/static/js/main.9a91adfd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98625360.css",
+    "static/js/main.9a91adfd.js"
+  ]
+}

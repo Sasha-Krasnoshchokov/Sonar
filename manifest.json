@@ -1,0 +1,15 @@
+{
+  "short_name": "Sonar",
+  "name": "Sonar",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "109x117",
+      "type": "svg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

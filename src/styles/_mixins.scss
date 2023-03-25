@@ -1,0 +1,55 @@
+@mixin flexCentered($direction: row, $align: center, $justify: center,) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+}
+
+@mixin text($size: 1rem, $height: null, $weight: null, $spacing: null) {
+  font-size: $size;
+  @if $height {
+    line-height: $height;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $spacing {
+    letter-spacing: $spacing;
+  }
+}
+
+@mixin mediaQuery($width: 1024px) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin backgroundImage($minWidth: null) {
+  @if $minWidth {
+    min-width: $minWidth;
+  }
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin widthHeight($width: 100%, $height: max-content) {
+  width: $width;
+  height: $height;
+}

@@ -63,6 +63,7 @@
     background-color: $blue_serene;
     overflow-y: auto;
     transition: left 0.5s linear;
+    z-index: 10;
 
     &_icon {
       @include widthHeight(36px, 36px);
@@ -127,9 +128,9 @@
       display: none;
       &_list {
         @include flexCentered(column, flex-start, flex-start);
+        @include widthHeight(100%, 100%);
 
         gap: 24px;
-        height: 100%;
       }
       &_item {
         text-align: start;

@@ -6,8 +6,6 @@
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 166%;
-  letter-spacing: -0.02em;
   scroll-behavior: smooth;
 }
 
@@ -15,6 +13,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 166%;
+  letter-spacing: -0.02em;
 }
 
 body {

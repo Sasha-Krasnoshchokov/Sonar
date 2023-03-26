@@ -1,0 +1,92 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.main {
+  // @include widthHeight(100%);
+
+  // min-height: 100vh;
+
+  &_about_us {
+    @include widthHeight(100%, 780px);
+    @include backgroundImage;
+
+    position: relative;
+    background-position: bottom right;
+    background-size: cover;
+
+    background-image: url(../../assets/icon_svg/about_bg.svg);
+
+    &__container {
+      @include absolute(134px, null, null, 200px);
+      @include widthHeight(450px);
+
+      color: $white;
+      z-index: 3;
+    }
+
+    &__peoples {
+      @include absolute(164px, 110px);
+      @include widthHeight(640px, 412px);
+      @include backgroundImage;
+  
+      background-image: url(../../assets/icon_svg/peoples.svg);
+    }
+
+    &_title {
+      @include text(46px, 69px, 700);
+
+      margin-bottom: 48px;
+    }
+
+    &_label {
+      @include text(30px, 45px, 600);
+
+      margin-bottom: 16px;
+    }
+
+    &_text {
+      @include text(20px);
+    }
+  }
+  
+
+  @include mediaQuery($large) {
+    &_about_us {
+      height: 650px;
+      &__peoples {
+        top: 11%;
+        right: 7.6%;
+        @include widthHeight(533px, 343px);
+      }
+      &__container {
+        top: 11%;
+        left: 40px;
+      }
+    }
+  }
+  @include mediaQuery($medium) {
+    &_about_us {
+      height: 554px;
+      &__peoples {
+        @include widthHeight(454px, 293px);
+      }
+      &__container {
+        left: 60px;
+      }
+      &_title {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  @include mediaQuery($small) {
+    &_about_us {
+      &__peoples {
+        display: none;
+      }
+      &__container {
+        top: 6%;
+        width: calc(100% - 120px);
+      }
+    }
+  }
+}

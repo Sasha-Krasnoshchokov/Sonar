@@ -57,7 +57,7 @@
 
   &_menu {
     @include absolute(0, null, null, 110%);
-    @include widthHeight(100vw, 50vh);
+    @include widthHeight(100vw, 75vh);
 
     padding: 80px 60px 40px 60px;
     background-color: $blue_serene;

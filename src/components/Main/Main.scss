@@ -2,15 +2,14 @@
 @import '../../styles/variables';
 
 .main {
-  // @include widthHeight(100%);
-
-  // min-height: 100vh;
+  @include flexCentered(column, center);
 
   &_about_us {
     @include widthHeight(100%, 780px);
     @include backgroundImage;
 
     position: relative;
+    margin-bottom: 104px;
     background-position: bottom right;
     background-size: cover;
 
@@ -56,7 +55,42 @@
       @include text(20px);
     }
   }
-  
+
+  &_our_vision {
+    @include flexCentered;
+    @include widthHeight(100%);
+
+    margin-bottom: 104px;
+    gap: 120px;
+
+    &_box {
+      @include flexCentered(column, center, flex-start);
+      @include widthHeight(455px, 300px);
+
+      padding: 47px 27.5px;
+      color: $black_md;
+      border-radius: 18px;
+
+      &__lilac {
+        background-color: $lilac;
+      }
+
+      &__blue {
+        background-color: $blue;
+      }
+    }
+
+    &_title {
+      @include text(32px, 48px, 700);
+
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    &_text {
+      @include text(24px);
+    }
+  }
 
   @include mediaQuery($large) {
     &_about_us {
@@ -75,6 +109,9 @@
         left: 10px;
       }
     }
+    &_our_vision {
+      gap: 60px;
+    }
   }
   @include mediaQuery($medium) {
     &_about_us {
@@ -89,15 +126,22 @@
         margin-bottom: 24px;
       }
     }
+    &_our_vision {
+      flex-direction: column;
+    }
   }
   @include mediaQuery($small) {
     &_about_us {
+      margin-bottom: 64px;
       &__peoples {
         display: none;
       }
       &__container {
         width: calc(100% - 120px);
       }
+    }
+    &_our_vision {
+      margin-bottom: 64px;
     }
   }
   @include mediaQuery($small_extra) {
@@ -109,6 +153,11 @@
         @include widthHeight(80px, 85px);
         top: 18px;
         left: 18px;
+      }
+    }
+    &_our_vision {
+      &_box {
+        @include widthHeight(300px);
       }
     }
   }

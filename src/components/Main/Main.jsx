@@ -29,6 +29,23 @@ function Main() {
         <div className="main_about_us__peoples" />
       </section>
 
+      <div className="main_our_vision">
+        <div className="main_our_vision_box main_our_vision_box__lilac">
+          <h3 className="main_our_vision_title">Our Vision</h3>
+          <p className="main_our_vision_text">
+            Catalyze the world&apos;s transition to precise,
+            effective and preventative mental healthcare.
+          </p>
+        </div>
+        <div className="main_our_vision_box main_our_vision_box__blue">
+          <h3 className="main_our_vision_title">Our Mission</h3>
+          <p className="main_our_vision_text">
+            Building digital health technology to proactively measure,
+            identify and support youth mental health.
+          </p>
+        </div>
+      </div>
+
     </main>
   );
 }

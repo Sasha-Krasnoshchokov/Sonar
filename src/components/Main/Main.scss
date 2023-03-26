@@ -4,12 +4,14 @@
 .main {
   @include flexCentered(column, center);
 
+  gap: 104px;
+  padding-bottom: 373px;
+
   &_about_us {
     @include widthHeight(100%, 780px);
     @include backgroundImage;
 
     position: relative;
-    margin-bottom: 104px;
     background-position: bottom right;
     background-size: cover;
 
@@ -60,7 +62,6 @@
     @include flexCentered;
     @include widthHeight(100%);
 
-    margin-bottom: 104px;
     gap: 120px;
 
     &_box {
@@ -131,17 +132,14 @@
     }
   }
   @include mediaQuery($small) {
+    gap: 64px;
     &_about_us {
-      margin-bottom: 64px;
       &__peoples {
         display: none;
       }
       &__container {
         width: calc(100% - 120px);
       }
-    }
-    &_our_vision {
-      margin-bottom: 64px;
     }
   }
   @include mediaQuery($small_extra) {

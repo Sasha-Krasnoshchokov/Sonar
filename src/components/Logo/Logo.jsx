@@ -4,7 +4,7 @@ import './Logo.scss';
 
 function Logo() {
   return (
-    <a href="/Sonar">
+    <a href="/Sonar/">
       <div id="logo" className="logo" />
     </a>
   );

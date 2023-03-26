@@ -1,0 +1,12 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.logo {
+  $logoWidth: 149px;
+
+  @include widthHeight($logoWidth, 37px);
+  @include backgroundImage;
+
+  min-width: $logoWidth;
+  background-image: url(../../assets/icon_svg/logo_sonar.svg);
+}

@@ -1,0 +1,145 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.header {
+  @include flexCentered;
+  @include widthHeight(100%, 110px);
+
+  padding: 0 72px 0 55px;
+
+  &_nav {
+    @include widthHeight(100%);
+
+    margin: 0 122px 0 123px;
+    max-width: 606px;
+
+    &__dashboard {
+      width: 117px;
+    }
+    &__about {
+      width: 86px;
+    }
+    &__faq {
+      width: 102px;
+    }
+    &__contact {
+      width: 109px;
+    }
+
+    &_list {
+      @include flexCentered(row, center, space-between);
+    }
+
+    &_item {
+      @include text(20px);
+
+      color: $black;
+      text-align: center;
+    }
+    &_link {
+      position: relative;
+      &:hover {
+        &::after {
+          @include absolute(100%, 0);
+          content: '';
+          width: 100%;
+          border-bottom: 2px solid $blue;
+        }
+      }
+    }
+  }
+
+  &_buttons {
+    @include flexCentered;
+
+    gap: 13px;
+  }
+
+  &_menu {
+    @include absolute(0, null, null, 110%);
+    @include widthHeight(100vw, 50vh);
+
+    padding: 80px 60px 40px 60px;
+    background-color: $blue_serene;
+    overflow-y: auto;
+    transition: left 0.5s linear;
+
+    &_icon {
+      @include widthHeight(36px, 36px);
+      @include backgroundImage;
+  
+      display: none;
+      min-width: 36px;
+      cursor: pointer;
+    }
+
+    &_nav {
+      @include flexCentered(column, flex-start, space-between);
+      @include widthHeight(100%, 100%);
+
+      min-height: 100%;
+    }
+
+    &__opener {
+      background-image: url(../../assets/icon_svg/menu_icon.svg);
+
+      &:hover {
+        background-image: url(../../assets/icon_svg/menu_icon__hover.svg);
+      }
+    }
+
+    &__shutter {
+      @include absolute(40px, 60px);
+      background-image: url(../../assets/icon_svg/shutter.svg);
+      transition: transform 0.5s linear;
+
+      &:hover {
+        transform: rotateZ(90deg);
+        transition: transform 0.5s linear;
+      }
+    }
+
+    &__opened {
+      left: 0;
+      transition: left 0.5s linear;
+    }
+  }
+
+  @include mediaQuery($large_extra) {
+    justify-content: space-between;
+
+    &_nav {
+      margin: 0 60px;
+    }
+  }
+
+  @include mediaQuery($large) {
+    padding: 0 40px;
+
+    &_nav {
+      margin: 0 28px;
+    }
+  }
+
+  @include mediaQuery($medium) {
+    padding: 0 60px;
+    &_nav {
+      display: none;
+      &_list {
+        @include flexCentered(column, flex-start, flex-start);
+
+        gap: 24px;
+        height: 100%;
+      }
+      &_item {
+        text-align: start;
+      }
+    }
+    &_buttons {
+      display: none;
+    }
+    &_menu_icon {
+      display: block;
+    }
+  }
+}

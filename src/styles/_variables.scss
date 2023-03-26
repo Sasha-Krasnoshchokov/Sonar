@@ -14,16 +14,51 @@ $lilac: #edc5ff;
 $black: #000;
 $black_md: #1d1d1d;
 
+$colors: (
+  'white': $white,
+  'white_dusty': $white_dusty,
+  'blue': $blue,
+  'blue_serene': $blue_serene,
+  'lilac': $lilac,
+  'black': $black,
+  'black_md': $black_md,
+);
+
 /*=====          End of COLORS         ======*/
 
 /*=============================================
-=                    BREAKPOINTS                   =
+=                 BREAKPOINTS                 =
 =============================================*/
 
+$large_extra: 1400px;
 $large: 1200px;
 $medium: 1024px;
 $small: 880px;
 $small_extra: 600px;
 
-/*=====          End of BREAKPOINTS         ======*/
+/*=====       End of BREAKPOINTS       ======*/
 
+/*=============================================
+=                    BUTTONS                  =
+=============================================*/
+$btn_sizes: (
+  "small": (
+    "padding": 12px 9px,
+    "width": 120px,
+    "height": 40px,
+    "border-radius": 6px,
+    "border": 1px solid,
+    "font-size": 16px,
+  ),
+  'medium': (
+    "padding": 19px 11px,
+    "width": 150px,
+    "height": 66px,
+    "border-radius": 8px,
+    "border": 1.5px solid,
+    "font-size": 20px,
+  ),
+);
+$btn_theme: ('white', 'blue');
+
+/*=====          End of BUTTONS        ======*/

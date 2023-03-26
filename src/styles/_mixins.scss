@@ -1,3 +1,6 @@
+@use 'sass:map';
+@import './variables';
+
 @mixin flexCentered($direction: row, $align: center, $justify: center,) {
   display: flex;
   flex-direction: $direction;
@@ -52,4 +55,31 @@
 @mixin widthHeight($width: 100%, $height: max-content) {
   width: $width;
   height: $height;
+}
+
+@mixin buttons {
+  @each $size, $styles in $btn_sizes {
+    .btn_#{$size} {
+      @include flexCentered;
+      @each $prop, $value in $styles {
+        #{$prop}: $value;
+      }
+    }
+  }
+  @each $theme, $styles in $btn_theme {
+    .btn_#{$theme} {
+      @if $theme == 'white' {
+        color: $blue;
+        border-color: $blue;
+        &:hover {
+          color: map-get($map: $colors, $key: $theme);
+          background-color: $blue;
+        }
+      } @else {
+        color: $white;
+        border: none;
+      }
+      background-color: map-get($map: $colors, $key: $theme);
+    }
+  }
 }

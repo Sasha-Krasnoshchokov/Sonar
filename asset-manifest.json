@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/Sonar/static/css/main.98625360.css",
-    "main.js": "/Sonar/static/js/main.9a91adfd.js",
+    "main.css": "/Sonar/static/css/main.f1258447.css",
+    "main.js": "/Sonar/static/js/main.4998155c.js",
+    "static/media/logo_sonar.svg": "/Sonar/static/media/logo_sonar.830aa22d35c488d1f3e5.svg",
+    "static/media/peoples.svg": "/Sonar/static/media/peoples.a11d448f075f1af1ebb1.svg",
+    "static/media/dolphin.svg": "/Sonar/static/media/dolphin.ab7559f875274b597af6.svg",
     "index.html": "/Sonar/index.html",
-    "main.98625360.css.map": "/Sonar/static/css/main.98625360.css.map",
-    "main.9a91adfd.js.map": "/Sonar/static/js/main.9a91adfd.js.map"
+    "static/media/menu_icon.svg": "/Sonar/static/media/menu_icon.1a6e1de482c666092576.svg",
+    "static/media/shutter.svg": "/Sonar/static/media/shutter.b4c241e5efcf68007286.svg",
+    "static/media/menu_icon__hover.svg": "/Sonar/static/media/menu_icon__hover.b5b5fcac1b348d239151.svg",
+    "static/media/about_bg.svg": "/Sonar/static/media/about_bg.1c445f587930b4346f37.svg",
+    "main.f1258447.css.map": "/Sonar/static/css/main.f1258447.css.map",
+    "main.4998155c.js.map": "/Sonar/static/js/main.4998155c.js.map"
   },
   "entrypoints": [
-    "static/css/main.98625360.css",
-    "static/js/main.9a91adfd.js"
+    "static/css/main.f1258447.css",
+    "static/js/main.4998155c.js"
   ]
 }

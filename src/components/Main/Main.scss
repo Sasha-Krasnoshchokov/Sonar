@@ -16,20 +16,28 @@
 
     background-image: url(../../assets/icon_svg/about_bg.svg);
 
-    &__container {
-      @include absolute(134px, null, null, 200px);
-      @include widthHeight(450px);
-
-      color: $white;
-      z-index: 3;
-    }
-
     &__peoples {
       @include absolute(164px, 110px);
       @include widthHeight(640px, 412px);
       @include backgroundImage;
   
       background-image: url(../../assets/icon_svg/peoples.svg);
+    }
+
+    &__dolphin {
+      @include absolute(79px, null, null, 149px);
+      @include widthHeight(109px, 117px);
+      @include backgroundImage;
+  
+      background-image: url(../../assets/icon_svg/dolphin.svg);
+    }
+
+    &__container {
+      @include absolute(134px, null, null, 200px);
+      @include widthHeight(450px);
+
+      color: $white;
+      z-index: 3;
     }
 
     &_title {
@@ -60,7 +68,11 @@
       }
       &__container {
         top: 11%;
-        left: 40px;
+        left: 60px;
+      }
+      &__dolphin {
+        top: 16px;
+        left: 10px;
       }
     }
   }
@@ -84,8 +96,19 @@
         display: none;
       }
       &__container {
-        top: 6%;
         width: calc(100% - 120px);
+      }
+    }
+  }
+  @include mediaQuery($small_extra) {
+    &_about_us {
+      &_title {
+        @include text(36px, 54px);
+      }
+      &__dolphin {
+        @include widthHeight(80px, 85px);
+        top: 18px;
+        left: 18px;
       }
     }
   }

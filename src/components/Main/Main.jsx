@@ -10,6 +10,7 @@ function Main() {
         id="about_us"
         className="main_about_us"
       >
+        <div className="main_about_us__dolphin" />
         <div className="main_about_us__container">
           <h3 className="main_about_us_title">
             About Us

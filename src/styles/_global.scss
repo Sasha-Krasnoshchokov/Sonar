@@ -44,6 +44,12 @@ ul, li {
   text-decoration: none;
 }
 
+input {
+  background: inherit;
+  border: none;
+  outline: none;
+}
+
 .capitalize {
   text-transform: capitalize;
 }

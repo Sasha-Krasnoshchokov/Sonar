@@ -3,19 +3,25 @@ import React, { useState, useCallback } from 'react';
 import headerNavigationList from '../../data/headerNavigationList';
 import Button from '../Button/Button';
 import Logo from '../Logo/Logo';
+import PopUp from '../PopUp/PopUp';
 
 import './Header.scss';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [isPopUpOpened, setIsPopUpOpened] = useState(false);
+
+  const openPopUp = useCallback(() => {
+    setIsPopUpOpened(!isPopUpOpened);
+  }, [isPopUpOpened]);
 
   const handleSignUp = useCallback(() => {
-    console.log('Sign Up');
-  }, []);
+    openPopUp();
+  }, [openPopUp]);
 
   const handleLogin = useCallback(() => {
-    console.log('Sign Up');
-  }, []);
+    openPopUp();
+  }, [openPopUp]);
 
   const handleMenu = useCallback((event) => {
     event.stopPropagation();
@@ -95,6 +101,14 @@ function Header() {
         </nav>
 
       </div>
+
+      {isPopUpOpened && (
+        <PopUp
+          callback={openPopUp}
+        >
+          Pop UP
+        </PopUp>
+      )}
     </header>
   );
 }

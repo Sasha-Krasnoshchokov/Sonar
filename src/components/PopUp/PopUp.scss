@@ -1,0 +1,38 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.popup {
+  @include absolute(0, 0);
+  @include widthHeight(100vw, 100vh);
+
+  &__bg {
+    background-color: $blue_serene;
+    opacity: 0.9;
+    z-index: 100;
+  }
+
+  &_content {
+    @include absolute(0, 0);
+    @include flexCentered;
+    @include widthHeight(100vw, 100vh);
+
+    background-color: transparent;
+    z-index: 100;
+  }
+
+  &__shutter {
+    @include absolute(40px, 60px);
+    @include widthHeight(36px, 36px);
+    @include backgroundImage;
+
+    min-width: 36px;
+    background-image: url(../../assets/icon_svg/shutter.svg);
+    transition: transform 0.5s linear;
+    z-index: 101;
+
+    &:hover {
+      transform: rotateZ(90deg);
+      transition: transform 0.5s linear;
+    }
+  }
+}

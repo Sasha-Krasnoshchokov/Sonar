@@ -1,9 +1,11 @@
 import React, { useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { set } from '../../store/slices/popUpSlice';
 
 import headerNavigationList from '../../data/headerNavigationList';
 import Button from '../Button/Button';
 import Logo from '../Logo/Logo';
-import PopUp from '../PopUp/PopUp';
 
 import './Header.scss';
 
@@ -11,16 +13,26 @@ function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [isPopUpOpened, setIsPopUpOpened] = useState(false);
 
+  const dispatch = useDispatch();
+
   const openPopUp = useCallback(() => {
     setIsPopUpOpened(!isPopUpOpened);
   }, [isPopUpOpened]);
 
   const handleSignUp = useCallback(() => {
-    openPopUp();
+    // openPopUp();
+    dispatch(set({
+      isOpen: true,
+      title: 'signUp',
+    }));
   }, [openPopUp]);
 
   const handleLogin = useCallback(() => {
-    openPopUp();
+    // openPopUp();
+    dispatch(set({
+      isOpen: true,
+      title: 'login',
+    }));
   }, [openPopUp]);
 
   const handleMenu = useCallback((event) => {
@@ -102,13 +114,6 @@ function Header() {
 
       </div>
 
-      {isPopUpOpened && (
-        <PopUp
-          callback={openPopUp}
-        >
-          Pop UP
-        </PopUp>
-      )}
     </header>
   );
 }

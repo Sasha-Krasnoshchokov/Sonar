@@ -1,0 +1,99 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.form {
+  @include flexCentered(column);
+
+  &_title {
+    @include flexCentered(column);
+    @include text(46px, 69px, 700);
+
+    color: $black;
+    margin-bottom: 48px;
+
+    &__idle {
+      border-bottom: 2px solid transparent;
+    }
+
+    &__pending {
+      &::after {
+        content: '';
+        width: 100%;
+        border-bottom: 2px solid $blue;
+        animation: length 1s infinite linear;
+      }
+    }
+    &__resolved {
+      &::after {
+        content: '';
+        width: 100%;
+        border-bottom: 2px solid green;
+      }
+    }
+    &__rejected {
+      &::after {
+        content: '';
+        width: 100%;
+        border-bottom: 2px solid red;
+      }
+    }
+  }
+
+  &_label {
+    @include flexCentered(column, flex-start);
+    @include text(20px);
+
+    color: $blue;
+    margin-bottom: 16px;
+  }
+
+  &_input {
+    @include text(20px);
+    @include widthHeight(340px, 52px);
+
+    margin-top: 8px;
+    padding: 16px;
+    color: $black;
+    text-align: left;
+    background-color: $white;
+    border: 1.5px solid $blue;
+    border-radius: 35px;
+
+    &::placeholder {
+      color: $black_md;
+      opacity: 0.5;
+    }
+    &:focus {
+      box-shadow: 0 0 1rem rgba(174, 174, 174, 0.8);
+    }
+  }
+
+  &_button {
+    @include text(20px, 166%, 600);
+    @include widthHeight(200px, 66px);
+
+    margin-top: 8px;
+    padding: 16px;
+    color: $white;
+    text-align: center;
+    background-color: $blue;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    &:hover {
+      box-shadow: 0 0 1rem rgba(174, 174, 174, 0.8);
+    }
+  }
+
+  @keyframes length {
+    0% {
+      width: 100%;
+    }
+    50% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+}

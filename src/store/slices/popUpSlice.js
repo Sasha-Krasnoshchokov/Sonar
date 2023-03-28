@@ -10,7 +10,7 @@ export const popUpSlice = createSlice({
   name: 'popUp',
   initialState,
   reducers: {
-    set: (state, action) => {
+    setPopUp: (state, action) => {
       state.isOpen = action.payload.isOpen;
       state.title = action.payload.title;
     },
@@ -18,6 +18,6 @@ export const popUpSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { set } = popUpSlice.actions;
+export const { setPopUp } = popUpSlice.actions;
 
 export default popUpSlice.reducer;

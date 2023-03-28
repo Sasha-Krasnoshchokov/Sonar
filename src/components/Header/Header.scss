@@ -55,6 +55,15 @@
     gap: 13px;
   }
 
+  &_avatar {
+    @include widthHeight(40px, 40px);
+
+    margin-left: 270px;
+    border-radius: 50%;
+    background-color: $blue;
+    cursor: pointer;
+  }
+
   &_menu {
     @include absolute(0, null, null, 110%);
     @include widthHeight(100vw, 75vh);
@@ -134,6 +143,9 @@
       &_item {
         text-align: start;
       }
+    }
+    &_avatar {
+      margin-left: 40px;
     }
     &_buttons {
       display: none;

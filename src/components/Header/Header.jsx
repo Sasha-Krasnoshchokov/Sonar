@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { set } from '../../store/slices/popUpSlice';
+import { setPopUp } from '../../store/slices/popUpSlice';
+import { setUser } from '../../store/slices/userSlice';
 
 import headerNavigationList from '../../data/headerNavigationList';
 import Button from '../Button/Button';
@@ -14,22 +15,30 @@ function Header() {
   const [isPopUpOpened, setIsPopUpOpened] = useState(false);
 
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const { avatar, name: userName } = user;
 
   const openPopUp = useCallback(() => {
     setIsPopUpOpened(!isPopUpOpened);
   }, [isPopUpOpened]);
 
+  const handleLogOut = useCallback(() => {
+    dispatch(setUser({
+      avatar: '',
+      name: '',
+      email: '',
+    }));
+  }, [openPopUp]);
+
   const handleSignUp = useCallback(() => {
-    // openPopUp();
-    dispatch(set({
+    dispatch(setPopUp({
       isOpen: true,
       title: 'signUp',
     }));
   }, [openPopUp]);
 
   const handleLogin = useCallback(() => {
-    // openPopUp();
-    dispatch(set({
+    dispatch(setPopUp({
       isOpen: true,
       title: 'login',
     }));
@@ -42,6 +51,13 @@ function Header() {
 
   return (
     <header id="header" className="header">
+
+      <button
+        id="menu_opener"
+        type="button"
+        className="header_menu_icon header_menu__opener"
+        onClick={handleMenu}
+      />
 
       <Logo />
 
@@ -68,17 +84,13 @@ function Header() {
         </ul>
       </nav>
 
-      <div className="header_buttons">
-        <Button text="Sign Up" theme="blue" size="medium" callback={handleSignUp} />
-        <Button text="Login" theme="white" size="medium" callback={handleLogin} />
-      </div>
+      {!userName && (
+        <div className="header_buttons">
+          <Button text="Sign Up" theme="blue" size="medium" callback={handleSignUp} />
+          <Button text="Login" theme="white" size="medium" callback={handleLogin} />
+        </div>
+      )}
 
-      <button
-        id="menu_opener"
-        type="button"
-        className="header_menu_icon header_menu__opener"
-        onClick={handleMenu}
-      />
       <div id="menu" className={`header_menu ${isMenuOpened && 'header_menu__opened'}`}>
         <button
           id="menu_opener"
@@ -113,6 +125,12 @@ function Header() {
         </nav>
 
       </div>
+
+      {userName && (
+        <button type="button" onClick={handleLogOut}>
+          <img src={avatar} alt="Avatar" title={userName} className="header_avatar" />
+        </button>
+      )}
 
     </header>
   );

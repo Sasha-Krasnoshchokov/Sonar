@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { set } from './store/slices/popUpSlice';
+import { setPopUp } from './store/slices/popUpSlice';
+import { setUser } from './store/slices/userSlice';
 
 import popUpContents from './data/popUpContents';
 
@@ -18,11 +19,16 @@ function App() {
   const [config, setConfig] = useState(null);
 
   const closePopUp = useCallback(() => {
-    dispatch(set({
+    dispatch(setPopUp({
       isOpen: false,
       title: '',
     }));
-  }, [dispatch, set]);
+  }, [dispatch, setPopUp]);
+
+  const getUser = useCallback((user) => {
+    dispatch(setUser({ ...user }));
+    closePopUp();
+  }, [dispatch, setUser]);
 
   useEffect(() => {
     if (content) {
@@ -37,7 +43,7 @@ function App() {
           callback={closePopUp}
         >
           {config.content === 'forms' && (
-            <Forms config={config} />
+            <Forms config={config} callback={getUser} />
           )}
         </PopUp>
       )}

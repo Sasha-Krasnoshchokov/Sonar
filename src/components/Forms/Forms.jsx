@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
 
+import avatar from '../../assets/icon_png/avatar.png';
+
 import './Forms.scss';
 
-const Forms = ({ config }) => {
+const Forms = ({ config, callback }) => {
   const [status, setStatus] = useState('idle');
-  // const [user, setUser] = useState(null);
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
@@ -22,11 +23,18 @@ const Forms = ({ config }) => {
       setTimeout(() => {
         setStatus('resolved');
       }, 500);
+      setTimeout(() => {
+        const user = {
+          avatar,
+          name: (config.title === 'Sign Up' ? event.target[0].value : 'Tom'),
+          email: (config.title === 'Sign Up'
+            ? event.target[1].value
+            : event.target[0].value),
+        };
+        callback(user);
+      }, 1500);
     } else {
       setStatus('rejected');
-    }
-    if (status === 'resolved' && config.title === 'Login') {
-      console.log('set user data to store');
     }
   }, []);
 

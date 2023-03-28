@@ -69,16 +69,24 @@
   }
   @each $theme, $styles in $btn_theme {
     .btn_#{$theme} {
+      transition: all 0.4s linear;
       @if $theme == 'white' {
         color: $blue;
         border-color: $blue;
         &:hover {
           color: map-get($map: $colors, $key: $theme);
           background-color: $blue;
+          transition: all 0.4s linear;
         }
       } @else {
         color: $white;
         border: none;
+        &:hover {
+          color: map-get($map: $colors, $key: 'blue');
+          background-color: $white;
+          border: 1.5px solid $blue;
+          transition: all 0.4s linear;
+        }
       }
       background-color: map-get($map: $colors, $key: $theme);
     }

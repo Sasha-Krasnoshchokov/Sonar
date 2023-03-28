@@ -63,6 +63,26 @@
     border-radius: 50%;
     background-color: transparent;
     cursor: pointer;
+
+    &_btn {
+      @include widthHeight(40px, 40px);
+
+      position: relative;
+    }
+
+    &_box {
+      @include absolute(0, 0);
+      @include flexCentered(column);
+      &:hover {
+        &::after {
+          content: 'Log Out';
+          width: 150%;
+          color: $blue;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
   }
 
   &_menu {

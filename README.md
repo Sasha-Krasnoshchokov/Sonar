@@ -8,8 +8,6 @@
 2. Implement the Sing up & Log as different forms with fake data in the same palette.
 3. Use Redux-Toolkit.
 
-In the project directory, you can run:
-
 ## To deploy locally
 
 ### `Clone the repository`

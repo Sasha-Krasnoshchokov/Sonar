@@ -140,12 +140,11 @@ function Header() {
 
       {userName ? (
         <button type="button" onClick={handleLogOut} className="header_avatar_btn">
-          <div className="header_avatar_box">
-            <img src={avatar} alt="Avatar" title={userName} className="header_avatar" />
-          </div>
+          <div className="header_avatar_box" />
+          <img src={avatar} alt="Avatar" title={userName} className="header_avatar" />
         </button>
       ) : (
-        <div className="header_avatar" />
+        <div className="header_avatar header_avatar__empty" />
       )}
 
     </header>

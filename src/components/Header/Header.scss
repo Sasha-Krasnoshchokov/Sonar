@@ -56,32 +56,44 @@
   }
 
   &_avatar {
+    @include flexCentered(column);
     @include widthHeight(40px, 40px);
 
-    display: none;
-    margin-left: 270px;
     border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
+    z-index: 4;
 
     &_btn {
+      @include flexCentered(column);
       @include widthHeight(40px, 40px);
 
+      margin-left: 270px;
       position: relative;
     }
-
     &_box {
       @include absolute(0, 0);
       @include flexCentered(column);
+      @include widthHeight(40px, 40px);
+
+      border-radius: 50%;
+      background-color: transparent;
+      cursor: pointer;
+      z-index: 5;
+
       &:hover {
         &::after {
+          @include absolute(100%, 0);
           content: 'Log Out';
-          width: 150%;
-          color: $blue;
+          width: 200%;
           font-size: 16px;
           font-weight: 600;
+          color: $blue;
+          text-align: end;
         }
       }
+    }
+
+    &__empty {
+      display: none;
     }
   }
 
@@ -154,6 +166,11 @@
     &_nav {
       margin: 0 28px;
     }
+    &_avatar {
+      &_btn {
+        margin-left: 100px;
+      }
+    }
   }
 
   @include mediaQuery($medium) {
@@ -172,7 +189,9 @@
     }
     &_avatar {
       display: flex;
-      margin-left: 10px;
+      &_btn {
+        margin-left: 10px;
+      }
     }
     &_buttons {
       display: none;

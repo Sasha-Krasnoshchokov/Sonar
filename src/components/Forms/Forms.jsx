@@ -57,6 +57,7 @@ const Forms = ({ config, callback }) => {
               <input
                 name={field.type}
                 type={field.type}
+                required
                 placeholder={`Input ${field.label}`}
                 className="form_input"
               />

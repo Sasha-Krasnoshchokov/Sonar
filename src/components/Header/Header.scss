@@ -58,9 +58,10 @@
   &_avatar {
     @include widthHeight(40px, 40px);
 
+    display: none;
     margin-left: 270px;
     border-radius: 50%;
-    background-color: $blue;
+    background-color: transparent;
     cursor: pointer;
   }
 
@@ -87,6 +88,11 @@
       @include widthHeight(100%, 100%);
 
       min-height: 100%;
+
+      &__btn {
+        @include flexCentered(column, flex-start, flex-start);
+        @include widthHeight(100%, 40px);
+      }
     }
 
     &__opener {
@@ -145,7 +151,8 @@
       }
     }
     &_avatar {
-      margin-left: 40px;
+      display: flex;
+      margin-left: 10px;
     }
     &_buttons {
       display: none;

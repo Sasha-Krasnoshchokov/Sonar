@@ -120,16 +120,30 @@ function Header() {
                   </li>
                 );
               })}
+
+              {!userName && (
+                <>
+                  <li className="header_nav_item header_menu_nav__btn">
+                    <Button text="Sign Up" theme="blue" size="small" callback={handleSignUp} />
+                  </li>
+                  <li className="header_nav_item header_menu_nav__btn">
+                    <Button text="Login" theme="white" size="small" callback={handleLogin} />
+                  </li>
+                </>
+              )}
+
             </ul>
           </div>
         </nav>
 
       </div>
 
-      {userName && (
+      {userName ? (
         <button type="button" onClick={handleLogOut}>
           <img src={avatar} alt="Avatar" title={userName} className="header_avatar" />
         </button>
+      ) : (
+        <div className="header_avatar" />
       )}
 
     </header>
